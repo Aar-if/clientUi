@@ -28,7 +28,7 @@ const CourseSummary: FC<{ course: CourseType }> = ({ course }) => {
       })),
     [course]
   );
-  console.log("COURSE SUMMARY");
+  console.log("course summary");
   console.log(course);
 
   const [courseUrl, enrollementEndDate] = useMemo(

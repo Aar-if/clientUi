@@ -7,7 +7,7 @@ const DetailsHeader: FC<{ course: CourseType }> = ({ course }) => {
   const normalisedTags = useMemo(
     () =>
       map(course?.tags[0]?.list, (tag) => ({
-        name: tag?.name,
+        name: tag?.descriptor?.name,
         value: tag?.value,
       })),
     [course]

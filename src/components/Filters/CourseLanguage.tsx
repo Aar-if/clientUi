@@ -14,6 +14,7 @@ const CourseLanguage: FC<{ applyFilter: any; label: string }> = ({
       { label: "All", value: "" },
       { label: "Marathi", value: "Marathi" },
       { label: "English", value: "English" },
+      { label: "Hindi", value: "Hindi" },
     ],
     []
   );
