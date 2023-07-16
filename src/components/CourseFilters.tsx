@@ -1,11 +1,12 @@
 import { useMemo, FC } from "react";
 import { map } from "lodash";
 import NationalCodinator from "./Filters/NationalCodinator";
-import CourseMode from "./Filters/CourseMode";
-import CourseDuration from "./Filters/CourseDuration";
-import CourseCredits from "./Filters/CourseCredits";
-import CourseStatus from "./Filters/CourseStatus";
-import CourseCategory from "./Filters/CourseCategory";
+import CourseLanguage from "./Filters/CourseLanguage";
+import CourseCompetencies from "./Filters/CourseCompetencies";
+import CourseGoal from "./Filters/CourseGoal";
+import CourseTheme from "./Filters/CourseTheme";
+import CourseDomain from "./Filters/CourseDomain";
+import CourseType from "./Filters/CourseType";
 
 const CourseFilters: FC<{ applyFilter: any }> = ({ applyFilter }) => {
   const courseFilters = useMemo(
@@ -65,14 +66,14 @@ const CourseFilters: FC<{ applyFilter: any }> = ({ applyFilter }) => {
         label: "Course Domain",
         value: "",
         items: [],
-        component: <CourseCategory applyFilter={applyFilter} label="Domain" />,
+        component: <CourseDomain applyFilter={applyFilter} label="Domain" />,
       },
       {
         key: "Goal",
         label: "Course Goal",
         value: "",
         items: [],
-        component: <CourseCategory applyFilter={applyFilter} label="Goal" />,
+        component: <CourseGoal applyFilter={applyFilter} label="Goal" />,
       },
       {
         key: "Competencies",
@@ -80,7 +81,7 @@ const CourseFilters: FC<{ applyFilter: any }> = ({ applyFilter }) => {
         value: "",
         items: [],
         component: (
-          <CourseCategory applyFilter={applyFilter} label="Competencies" />
+          <CourseCompetencies applyFilter={applyFilter} label="Competencies" />
         ),
       },
       {
@@ -89,7 +90,7 @@ const CourseFilters: FC<{ applyFilter: any }> = ({ applyFilter }) => {
         value: "",
         items: [],
         component: (
-          <CourseCategory applyFilter={applyFilter} label="Language" />
+          <CourseLanguage applyFilter={applyFilter} label="Language" />
         ),
       },
       {
@@ -97,14 +98,14 @@ const CourseFilters: FC<{ applyFilter: any }> = ({ applyFilter }) => {
         label: "Course Theme",
         value: "",
         items: [],
-        component: <CourseCategory applyFilter={applyFilter} label="Theme" />,
+        component: <CourseTheme applyFilter={applyFilter} label="theme" />,
       },
       {
         key: "Type",
         label: "Course Type",
         value: "",
         items: [],
-        component: <CourseCategory applyFilter={applyFilter} label="Type" />,
+        component: <CourseType applyFilter={applyFilter} label="Type" />,
       },
     ],
     []

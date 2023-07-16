@@ -4,41 +4,35 @@ import { FloatingLabel, Form } from "react-bootstrap";
 import Dropdown from "react-dropdown";
 import "react-dropdown/style.css";
 
-const CourseCategory: FC<{ applyFilter: any; label: string }> = ({
+const CourseTheme: FC<{ applyFilter: any; label: string }> = ({
   applyFilter,
   label,
 }) => {
-  const [status, setStatus] = useState({ label: "All", value: "" });
+  const [mode, setMode] = useState({ label: "All", value: "" });
   const options = useMemo(
     () => [
       { label: "All", value: "" },
-      { label: "Domain", value: "domain" },
-      // { label: 'Annual Refresher Programme in Teaching (ARPIT)', value: "ARPIT" },
-      // { label: 'Architecture and Planning', value: "ARCHI_COURSES" },
-      // { label: 'Design', value: "Design" },
-      // { label: 'School', value: "SCHOOL" },
+      { label: "Animals", value: "Animals" },
     ],
     []
   );
 
   const onChange = useCallback(
     (option: any): void => {
-      setStatus(option.target.value);
+      setMode(option.target.value);
       applyFilter((prev: any) => ({
         ...prev,
-        course_category: option?.target.value,
+        theme: option?.target.value,
       }));
     },
     [applyFilter]
   );
 
   return (
-    // //@ts-ignore
-    // <Dropdown options={options} onChange={onChange} value={status} className='w-full' />
+    // <Dropdown options={options} onChange={onChange} value={mode} className='w-full' />
     <FloatingLabel controlId="floatingSelect" label={label}>
       <Form.Select aria-label={label} onChange={onChange}>
         {map(options, (option) => (
-          //@ts-ignore
           <option value={option?.value}>{option?.label}</option>
         ))}
       </Form.Select>
@@ -46,4 +40,4 @@ const CourseCategory: FC<{ applyFilter: any; label: string }> = ({
   );
 };
 
-export default CourseCategory;
+export default CourseTheme;

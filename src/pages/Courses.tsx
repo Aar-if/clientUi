@@ -70,10 +70,9 @@ const Courses = (props: any) => {
   const dataToDisplay = useMemo(() => {
     const dtp: Array<any> = [];
     forEach(courses?.["providers"], (categories: any, index: number) => {
-      if (index < 5)
-        forEach(categories?.items, (category: any, index: number) => {
-          if (index < 5) dtp.push(category);
-        });
+      forEach(categories?.items, (category: any, index: number) => {
+        dtp.push(category);
+      });
     });
     return dtp;
   }, [courses]);

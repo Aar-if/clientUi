@@ -20,7 +20,16 @@ const CourseSummary: FC<{ course: CourseType }> = ({ course }) => {
 
   const haveVideo = useMemo(() => false, []);
 
-  const normalisedTags = useMemo(() => map(course?.tags[0]?.list, (tag) => ({ name: tag?.descriptor?.name, value: tag?.value })), [course])
+  const normalisedTags = useMemo(
+    () =>
+      map(course?.tags[0]?.list, (tag) => ({
+        name: tag?.name,
+        value: tag?.value,
+      })),
+    [course]
+  );
+  console.log("COURSE SUMMARY");
+  console.log(course);
 
   const [courseUrl, enrollementEndDate] = useMemo(
     () => [
@@ -31,7 +40,6 @@ const CourseSummary: FC<{ course: CourseType }> = ({ course }) => {
   );
 
   return (
-
     <Row style={{ fontSize: "14px", fontWeight: "500" }} className="mt-5">
       <Container>
         <ListGroup>
@@ -86,7 +94,13 @@ const CourseSummary: FC<{ course: CourseType }> = ({ course }) => {
             <Button
               onClick={() => setOpen(true)}
               className="px-5 py-2"
-              style={{ borderTopRightRadius: '20px', borderTopLeftRadius: '20px', borderBottomRightRadius: '20px', borderBottomLeftRadius: '20px', background: '#3849ab' }}
+              style={{
+                borderTopRightRadius: "20px",
+                borderTopLeftRadius: "20px",
+                borderBottomRightRadius: "20px",
+                borderBottomLeftRadius: "20px",
+                background: "#3849ab",
+              }}
             >
               Go To Class
             </Button>
