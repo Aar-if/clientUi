@@ -7,7 +7,7 @@ import Courses from "./pages/Courses";
 import CourseDetails from "./pages/CourseDetails";
 import MyCourses from "./pages/MyCourses";
 import { Toaster } from "react-hot-toast";
-const socket = io("https://onest-explorer-api.tekdinext.com/");
+const socket = io("https://onest-explorer-api.tekdinext.com");
 // const socket = io("http://localhost:3000");
 
 function App() {

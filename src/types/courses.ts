@@ -25,9 +25,10 @@ export type CourseType = {
     {
       descriptor: { name: string };
       list: Array<{
-        descriptor: {
-          name: string;
-        };
+        name: any;
+        // descriptor: {
+        //   name: string;
+        // };
         value: string;
       }>;
     }

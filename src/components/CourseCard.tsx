@@ -27,7 +27,7 @@ const CourseCard: FC<{ course: CourseType; isMyCourse?: boolean }> = ({
   const normalisedTags = useMemo(
     () =>
       map(course?.tags[0]?.list, (tag) => ({
-        name: tag?.descriptor?.name,
+        name: tag?.name,
         value: tag?.value,
       })),
     [course]
