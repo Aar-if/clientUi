@@ -18,6 +18,15 @@ const CourseDomain: FC<{ applyFilter: any; label: string }> = ({
         label: "Socio-Emotional and Ethical Development",
         value: "Socio-Emotional and Ethical Development",
       },
+      {
+        label: "Language and Literacy Development",
+        value: "Language and Literacy Development",
+      },
+      {
+        label: "Aesthetic and Cultural Development",
+        value: "Aesthetic and Cultural Development",
+      },
+      { label: "Positive Learning Habits", value: "Positive Learning Habits" },
       // { label: 'Annual Refresher Programme in Teaching (ARPIT)', value: "ARPIT" },
       // { label: 'Architecture and Planning', value: "ARCHI_COURSES" },
       // { label: 'Design', value: "Design" },

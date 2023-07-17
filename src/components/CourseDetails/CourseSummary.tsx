@@ -61,7 +61,7 @@ const CourseSummary: FC<{ course: CourseType }> = ({ course }) => {
           {/* <div className="px-4">
           <p> Course Type : Elective </p>
         </div> */}
-          <div className="px-4">
+          {/* <div className="px-4">
             <p>
               Duration :
               <span style={{ color: "gray" }}>
@@ -89,7 +89,7 @@ const CourseSummary: FC<{ course: CourseType }> = ({ course }) => {
                 {moment(enrollementEndDate).format("DD MMMM,YYYY") ?? "N/A"}
               </span>
             </p>
-          </div>
+          </div> */}
           <div className="px-4">
             <Button
               onClick={() => setOpen(true)}
@@ -102,7 +102,7 @@ const CourseSummary: FC<{ course: CourseType }> = ({ course }) => {
                 background: "#3849ab",
               }}
             >
-              Go To Class
+              Open
             </Button>
           </div>
         </ListGroup>

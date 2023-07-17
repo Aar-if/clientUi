@@ -13,6 +13,13 @@ const CourseTheme: FC<{ applyFilter: any; label: string }> = ({
     () => [
       { label: "All", value: "" },
       { label: "Animals", value: "Animals" },
+      { label: "Food", value: "Food" },
+      { label: "Colors", value: "Colors" },
+      { label: "Vegetables", value: "Vegetables" },
+      { label: "Home Activities", value: "Home Activities" },
+      { label: "Birds", value: "Birds" },
+      { label: "Relations", value: "Relations" },
+      { label: "Numbers", value: "Numbers" },
     ],
     []
   );

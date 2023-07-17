@@ -65,12 +65,7 @@ const CourseCard: FC<{ course: CourseType; isMyCourse?: boolean }> = ({
               </Col>
             </Row>
             <Row>
-              <Col xs={10}>
-                {" "}
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                Dolores, tempore accusantium. Itaque tempora perferendis iusto
-                cupiditate officia sapiente in magni?
-              </Col>
+              <Col xs={10}> {course?.descriptor?.long_desc}</Col>
             </Row>
             {isMyCourse ? (
               <Row className="mt-2">

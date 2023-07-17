@@ -56,20 +56,12 @@ const CourseAbout: FC<{ course: CourseType }> = ({ course }) => {
             <p
               style={{ fontWeight: "500", fontSize: "14px", color: "#606060" }}
             >
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut nam
-              ipsum in est nostrum sunt impedit atque laborum officia quaerat?
+              {course?.descriptor?.long_desc}
             </p>
             <p
               className="mt-3"
               style={{ fontWeight: "500", fontSize: "14px", color: "#606060" }}
-            >
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quod
-              atque eos, quidem ex sed nam sunt voluptas officiis reiciendis
-              delectus quo, assumenda veritatis deserunt possimus explicabo
-              molestiae aut! Cumque pariatur ab enim fugit eius, quae voluptatum
-              itaque totam vero tempora consequuntur harum modi architecto
-              veniam voluptates. Rem quam veniam debitis.
-            </p>
+            ></p>
           </Col>
         </Row>
       </Container>

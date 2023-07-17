@@ -12,9 +12,10 @@ const CourseLanguage: FC<{ applyFilter: any; label: string }> = ({
   const options = useMemo(
     () => [
       { label: "All", value: "" },
-      { label: "Marathi", value: "Marathi" },
       { label: "English", value: "English" },
+      { label: "Tamil", value: "Tamil" },
       { label: "Hindi", value: "Hindi" },
+      { label: "Assamese", value: "Assamese" },
     ],
     []
   );

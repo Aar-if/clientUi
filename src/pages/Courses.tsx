@@ -119,7 +119,7 @@ const Courses = (props: any) => {
                   >
                     Showing &nbsp;
                     <span className="font-bold">
-                      {dataToDisplay?.length} courses
+                      {dataToDisplay?.length} Content
                     </span>
                   </div>
                 )}
