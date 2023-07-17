@@ -13,19 +13,92 @@ const CourseCompetencies: FC<{ applyFilter: any; label: string }> = ({
     () => [
       { label: "All", value: "" },
       {
-        label: "C-1.1",
+        label: "C-2.2: Develops visual memory for symbols and representations",
+        value: "C-2.2: Develops visual memory for symbols and representationss",
+      },
+      {
+        label:
+          "C-2.3: Differentiates sounds by their pitch, volume and sound patterns by their pitch, volume, and tempo",
+        value:
+          "C-2.3: Differentiates sounds by their pitch, volume and sound patterns by their pitch, volume, and tempo",
+      },
+      {
+        label:
+          "C-2.1: Differentiates between shapes, colours, and their shades",
+        value:
+          "C-2.1: Differentiates between shapes, colours, and their shades",
+      },
+      {
+        label: "C-1.2: Practices basic self-care and hygiene",
+        value: "C-1.2: Practices basic self-care and hygiene",
+      },
+      {
+        label:
+          "C-1.1: Shows a liking for and understanding of nutritious food and does not waste food",
         value:
           "C-1.1: Shows a liking for and understanding of nutritious food and does not waste food",
       },
       {
-        label: "C-7.1",
+        label: "C-1.3: Keeps school/classroom hygienic and organised",
+        value: "C-1.3: Keeps school/classroom hygienic and organised",
+      },
+      {
+        label:
+          "C-3.3: Shows precision and control in working with their hands and fingers",
+        value:
+          "C-3.3: Shows precision and control in working with their hands and fingers",
+      },
+      {
+        label:
+          "C-3.2: Shows balance, coordination and flexibility in various physical activities",
+        value:
+          "C-3.2: Shows balance, coordination and flexibility in various physical activities",
+      },
+      {
+        label:
+          "C-3.1: Shows coordination between sensorial perceptions and body movements in various activities",
+        value:
+          "C-3.1: Shows coordination between sensorial perceptions and body movements in various activities",
+      },
+      {
+        label:
+          "C-4.2: Recognises different emotions and makes deliberate effort to regulate them appropriately",
+        value:
+          "C-4.2: Recognises different emotions and makes deliberate effort to regulate them appropriately",
+      },
+      {
+        label:
+          "C-4.1: Starts recognising 'self' as an individual belonging to a family and community",
+        value:
+          "C-4.1: Starts recognising 'self' as an individual belonging to a family and community",
+      },
+      {
+        label:
+          "C-7.2: Observes and understands cause and effect relationships in nature by forming simple hypothesis and uses observations to explain their hypothesis",
+        value:
+          "C-7.2: Observes and understands cause and effect relationships in nature by forming simple hypothesis and uses observations to explain their hypothesis",
+      },
+      {
+        label:
+          "C-7.1: Observes and understands different categories of objects and relationships between them",
         value:
           "C-7.1: Observes and understands different categories of objects and relationships between them",
       },
       {
-        label: "C-4.1",
+        label: "C-9.2: Creates simple songs and poems on their own",
+        value: "C-9.2: Creates simple songs and poems on their own",
+      },
+      {
+        label:
+          "C-9.1: Listens to and appreciates simple songs, rhymes, and poems",
         value:
-          "C-4.1: Starts recognising 'self' as an individual belonging to a family and community",
+          "C-9.1: Listens to and appreciates simple songs, rhymes, and poems",
+      },
+      {
+        label:
+          "C-12.1: Explores and plays with a variety of materials and tools to create two-dimensional and three-dimensional artworks in varying sizes",
+        value:
+          "C-12.1: Explores and plays with a variety of materials and tools to create two-dimensional and three-dimensional artworks in varying sizes",
       },
     ],
     []

@@ -12,8 +12,9 @@ const CourseType: FC<{ applyFilter: any; label: string }> = ({
   const options = useMemo(
     () => [
       { label: "All", value: "" },
-      { label: "Asset", value: "Asset" },
-      { label: "Resource", value: "Resource" },
+      { label: "Video", value: "Video" },
+      { label: "Audio", value: "Audio" },
+      { label: "Read Along", value: "Read Along" },
     ],
     []
   );

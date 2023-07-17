@@ -98,7 +98,7 @@ const CourseFilters: FC<{ applyFilter: any }> = ({ applyFilter }) => {
         label: "Course Theme",
         value: "",
         items: [],
-        component: <CourseTheme applyFilter={applyFilter} label="theme" />,
+        component: <CourseTheme applyFilter={applyFilter} label="Theme" />,
       },
       {
         key: "Type",

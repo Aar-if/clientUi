@@ -137,7 +137,7 @@ const CourseCard: FC<{ course: CourseType; isMyCourse?: boolean }> = ({
             )}
           </Col>
 
-          <Col
+          {/* <Col
             xs={3}
             style={{ borderLeft: "1px solid lightgray" }}
             className="p-2 container-fluid"
@@ -168,7 +168,7 @@ const CourseCard: FC<{ course: CourseType; isMyCourse?: boolean }> = ({
                 {instructors}
               </span>
             </div>
-          </Col>
+          </Col> */}
         </Row>
       </Card>
     </LinkContainer>
