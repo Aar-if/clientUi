@@ -10,6 +10,7 @@ import {
   FaCalendar,
   FaLanguage,
   FaDatabase,
+  FaAffiliatetheme,
   FaEye,
   FaUser,
 } from "react-icons/fa";
@@ -64,9 +65,13 @@ const CourseCard: FC<{ course: CourseType; isMyCourse?: boolean }> = ({
               {/* <Col xs={3}>
                 <Card.Img src={imageUrl} />
               </Col> */}
-              <Col xs={7}>
+              <Col xs={7} style={{ padding: "20px" }}>
                 <Row>
-                  <h6>{offeringInstitue}</h6>
+                  <h5>
+                    {" "}
+                    <b>Provider Name : </b>
+                    {offeringInstitue}
+                  </h5>
                 </Row>
                 <Row>
                   <strong>{course?.descriptor?.name}</strong>
@@ -74,25 +79,35 @@ const CourseCard: FC<{ course: CourseType; isMyCourse?: boolean }> = ({
                 <Row>
                   <Rating value={4} size={1} />
                 </Row>
+                <hr style={{ width: "100vh" }}></hr>
               </Col>
             </Row>
             <Row>
-              <Col xs={10}> {course?.descriptor?.long_desc}</Col>
+              <Col xs={10} style={{ paddingLeft: "20px" }}>
+                {" "}
+                <b>Description : </b>
+                {course?.descriptor?.long_desc}
+              </Col>
             </Row>
             <Row>
-              <Col xs={10}> {course?.descriptor?.domain}</Col>
+              <Col xs={10} style={{ paddingLeft: "20px" }}>
+                {" "}
+                <b>Domain : </b>
+                {course?.descriptor?.domain}
+              </Col>
             </Row>
             <Row>
-              <Col xs={10}> {course?.descriptor?.goal}</Col>
+              <Col xs={10} style={{ paddingLeft: "20px" }}>
+                {" "}
+                <b>Curricular Goal : </b>
+                {course?.descriptor?.goal}
+              </Col>
             </Row>
             <Row>
-              <Col xs={10}> {course?.descriptor?.competency}</Col>
-            </Row>
-            <Row>
-              <Col xs={10}> {course?.descriptor?.language}</Col>
-            </Row>
-            <Row>
-              <Col xs={10}> {course?.descriptor?.themes}</Col>
+              <Col xs={10} style={{ paddingLeft: "20px" }}>
+                {" "}
+                <b>Competency : </b> {course?.descriptor?.competency}
+              </Col>
             </Row>
 
             {isMyCourse ? (
@@ -144,19 +159,25 @@ const CourseCard: FC<{ course: CourseType; isMyCourse?: boolean }> = ({
               </Row>
             ) : (
               <Row className="mt-2">
-                <Col>
-                  <FaBookmark
+                <Col
+                  style={{
+                    paddingLeft: "20px",
+                    paddingBottom: "10px",
+                    paddingTop: "10px",
+                  }}
+                >
+                  {/* <FaBookmark
                     color="blue"
                     style={{ fontSize: "23px", marginRight: "15px" }}
-                  />
-                  <Button
+                  /> */}
+                  {/* <Button
                     variant="outline-secondary"
                     size="sm"
                     style={{ marginRight: "15px" }}
                   >
                     {" "}
                     <BiListPlus style={{ fontSize: "23px" }} /> Add to List
-                  </Button>
+                  </Button> */}
                   {/* <Button variant="outline-secondary" size="sm">
                     <FaEye style={{ fontSize: "18px" }} /> Quick View
                   </Button> */}
@@ -207,6 +228,16 @@ const CourseCard: FC<{ course: CourseType; isMyCourse?: boolean }> = ({
               <span style={{ fontSize: "12px", color: "gray" }}>
                 {" "}
                 Content Type : {course?.descriptor?.contentType}
+              </span>
+            </div>
+            <div
+              style={{ borderBottom: "1px solid lightgray" }}
+              className="py-2"
+            >
+              <FaAffiliatetheme />{" "}
+              <span style={{ fontSize: "12px", color: "gray" }}>
+                {" "}
+                Theme : {course?.descriptor?.themes}
               </span>
             </div>
             {/* <div>
