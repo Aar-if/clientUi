@@ -4,6 +4,12 @@ export type CourseType = {
   descriptor: {
     name: string;
     long_desc?: string;
+    themes: string;
+    contentType: string;
+    language: string;
+    competency: string;
+    domain: string;
+    goal: string;
     images: Array<{ url: string }>;
   };
   price: {

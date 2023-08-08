@@ -8,7 +8,8 @@ import { find, map } from "lodash";
 import {
   FaBookmark,
   FaCalendar,
-  FaCreditCard,
+  FaLanguage,
+  FaDatabase,
   FaEye,
   FaUser,
 } from "react-icons/fa";
@@ -66,6 +67,21 @@ const CourseCard: FC<{ course: CourseType; isMyCourse?: boolean }> = ({
             </Row>
             <Row>
               <Col xs={10}> {course?.descriptor?.long_desc}</Col>
+            </Row>
+            <Row>
+              <Col xs={10}> {course?.descriptor?.domain}</Col>
+            </Row>
+            <Row>
+              <Col xs={10}> {course?.descriptor?.goal}</Col>
+            </Row>
+            <Row>
+              <Col xs={10}> {course?.descriptor?.competency}</Col>
+            </Row>
+            <Row>
+              <Col xs={10}> {course?.descriptor?.language}</Col>
+            </Row>
+            <Row>
+              <Col xs={10}> {course?.descriptor?.themes}</Col>
             </Row>
 
             {isMyCourse ? (
@@ -138,7 +154,7 @@ const CourseCard: FC<{ course: CourseType; isMyCourse?: boolean }> = ({
             )}
           </Col>
 
-          {/* <Col
+          <Col
             xs={3}
             style={{ borderLeft: "1px solid lightgray" }}
             className="p-2 container-fluid"
@@ -147,29 +163,29 @@ const CourseCard: FC<{ course: CourseType; isMyCourse?: boolean }> = ({
               style={{ borderBottom: "1px solid lightgray" }}
               className="py-1"
             >
-              <FaCreditCard />{" "}
+              <FaLanguage />{" "}
               <span style={{ fontSize: "12px", color: "gray" }}>
                 {" "}
-                Credits :{credits}
+                Language : {course?.descriptor?.language}
               </span>
             </div>
             <div
               style={{ borderBottom: "1px solid lightgray" }}
               className="py-2"
             >
-              <FaCalendar />{" "}
+              <FaDatabase />{" "}
               <span style={{ fontSize: "12px", color: "gray" }}>
                 {" "}
-                {moment(course?.time?.range?.start).format("Do MMM, YYYY")}
+                Content Type : {course?.descriptor?.contentType}
               </span>
             </div>
-            <div>
+            {/* <div>
               <FaUser />{" "}
               <span style={{ fontSize: "12px", color: "gray" }}>
                 {instructors}
               </span>
-            </div>
-          </Col> */}
+            </div> */}
+          </Col>
         </Row>
       </Card>
     </LinkContainer>
