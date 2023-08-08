@@ -20,7 +20,7 @@ export const courseSlice = createSlice({
 			state.isFetching = payload;
 		},
 		setCourses:(state, {payload}) => {
-			console.log("vvvv: payload",{payload:cloneDeep(payload)});
+			// console.log("vvvv: payload",{payload:cloneDeep(payload)});
 			state.isFetching = false;
 			//state.courses=payload.catalogue
 			state.courses=payload.catalog
