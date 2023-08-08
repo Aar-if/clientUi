@@ -1,4 +1,4 @@
-import { FC, useMemo } from "react";
+import { FC, useMemo, useState } from "react";
 import Books from "../assets/images/books.jpg";
 import { LinkContainer } from "react-router-bootstrap";
 import { CourseType } from "../types/courses";
@@ -15,11 +15,13 @@ import {
 } from "react-icons/fa";
 import { BiListPlus } from "react-icons/bi";
 import moment from "moment";
+import WarningModal from "./WarningModal";
 const CourseCard: FC<{ course: CourseType; isMyCourse?: boolean }> = ({
   course,
   isMyCourse,
 }) => {
   console.log("mnop:", { course });
+  const [open, setOpen] = useState(false);
   const imageUrl = useMemo(
     () => course?.descriptor?.images?.[0]?.url ?? Books,
     [course, Books]
@@ -41,9 +43,18 @@ const CourseCard: FC<{ course: CourseType; isMyCourse?: boolean }> = ({
     ],
     [normalisedTags]
   );
+
+  const [courseUrl, enrollementEndDate] = useMemo(
+    () => [
+      find(normalisedTags, { name: "url" })?.value,
+      find(normalisedTags, { name: "enrollmentEndDate" })?.value,
+    ],
+    [normalisedTags]
+  );
+
   return (
-    <LinkContainer
-      to={`/courses/${course?.id}`}
+    <div
+      // to={`/courses/${course?.id}`}
       style={{ cursor: "pointer", marginBottom: "10px" }}
     >
       <Card className="p-2" style={{ backgroundColor: "your-color-here" }}>
@@ -146,10 +157,29 @@ const CourseCard: FC<{ course: CourseType; isMyCourse?: boolean }> = ({
                     {" "}
                     <BiListPlus style={{ fontSize: "23px" }} /> Add to List
                   </Button>
-                  <Button variant="outline-secondary" size="sm">
+                  {/* <Button variant="outline-secondary" size="sm">
                     <FaEye style={{ fontSize: "18px" }} /> Quick View
+                  </Button> */}
+                  <Button
+                    onClick={() => setOpen(true)}
+                    className="px-5 py-2"
+                    size="sm"
+                    style={{
+                      borderTopRightRadius: "20px",
+                      borderTopLeftRadius: "20px",
+                      borderBottomRightRadius: "20px",
+                      borderBottomLeftRadius: "20px",
+                      background: "#3849ab",
+                    }}
+                  >
+                    Open
                   </Button>
                 </Col>
+                <WarningModal
+                  open={open}
+                  setOpen={setOpen}
+                  url={courseUrl ?? ""}
+                />
               </Row>
             )}
           </Col>
@@ -188,7 +218,7 @@ const CourseCard: FC<{ course: CourseType; isMyCourse?: boolean }> = ({
           </Col>
         </Row>
       </Card>
-    </LinkContainer>
+    </div>
   );
 };
 
