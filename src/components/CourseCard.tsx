@@ -57,7 +57,10 @@ const CourseCard: FC<{ course: CourseType; isMyCourse?: boolean }> = ({
       // to={`/courses/${course?.id}`}
       style={{ cursor: "pointer", marginBottom: "10px" }}
     >
-      <Card className="p-2" style={{ backgroundColor: "your-color-here" }}>
+      <Card
+        className="p-2"
+        style={{ background: "linear-gradient(to bottom, #ffff, #EDF0FD)" }}
+      >
         <Row>
           <Col>
             <Row>
@@ -66,14 +69,18 @@ const CourseCard: FC<{ course: CourseType; isMyCourse?: boolean }> = ({
               </Col> */}
               <Col xs={7} style={{ padding: "20px" }}>
                 <Row>
-                  <h5>
+                  <h5 style={{ color: "#0F75BC" }}>
                     {" "}
                     <b>Provider Name : </b>
                     {offeringInstitue}
                   </h5>
                 </Row>
                 <Row>
-                  <strong>{course?.descriptor?.name}</strong>
+                  <strong style={{ color: "#3B4555" }}>
+                    {" "}
+                    <b> Title : </b>
+                    {course?.descriptor?.name}
+                  </strong>
                 </Row>
                 <Row>
                   <Rating value={4} size={1} />
@@ -189,7 +196,7 @@ const CourseCard: FC<{ course: CourseType; isMyCourse?: boolean }> = ({
                       borderTopLeftRadius: "20px",
                       borderBottomRightRadius: "20px",
                       borderBottomLeftRadius: "20px",
-                      background: "#3849ab",
+                      background: "#1584D1",
                     }}
                   >
                     Open

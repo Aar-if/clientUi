@@ -10,7 +10,14 @@ const Header: FC<{
 }> = ({ isSearchVisible = false, handleChange }) => {
   return (
     <>
-      <Navbar style={{ background: "#EDF0FD" }} expand="lg">
+      <Navbar
+        style={{
+          background: "#ffffff",
+
+          boxShadow: "0px 1px 4px rgba(0, 0, 0, 0.1)",
+        }}
+        expand="lg"
+      >
         <Container fluid>
           <LinkContainer to={`/`} style={{ cursor: "pointer" }}>
             <Navbar.Brand href="#">
@@ -36,7 +43,7 @@ const Header: FC<{
             <Form className="d-flex ">
               <Form.Control
                 type="search"
-                placeholder="Search"
+                placeholder="Search by Course title"
                 className="me-2"
                 aria-label="Search"
                 style={{ width: "30vw" }}

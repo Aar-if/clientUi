@@ -116,7 +116,10 @@ const CourseFilters: FC<{ applyFilter: any }> = ({ applyFilter }) => {
   return (
     <>
       {map(courseFilters, (cFilter: any) => (
-        <div className="bg-white">
+        <div
+          className="bg-white"
+          style={{ background: "linear-gradient(to left, #ffff, #EDF0FD)" }}
+        >
           {/* <div className="w-full text-[#000]" style={{ display: "block" }}>
             {cFilter.label}
           </div> */}
