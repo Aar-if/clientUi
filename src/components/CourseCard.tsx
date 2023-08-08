@@ -49,9 +49,9 @@ const CourseCard: FC<{ course: CourseType; isMyCourse?: boolean }> = ({
         <Row>
           <Col>
             <Row>
-              <Col xs={3}>
+              {/* <Col xs={3}>
                 <Card.Img src={imageUrl} />
-              </Col>
+              </Col> */}
               <Col xs={7}>
                 <Row>
                   <h6>{offeringInstitue}</h6>
@@ -67,6 +67,7 @@ const CourseCard: FC<{ course: CourseType; isMyCourse?: boolean }> = ({
             <Row>
               <Col xs={10}> {course?.descriptor?.long_desc}</Col>
             </Row>
+
             {isMyCourse ? (
               <Row className="mt-2">
                 <Col>

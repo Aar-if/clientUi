@@ -69,11 +69,13 @@ const CourseFilters: FC<{ applyFilter: any }> = ({ applyFilter }) => {
         component: <CourseDomain applyFilter={applyFilter} label="Domain" />,
       },
       {
-        key: "Goal",
+        key: " Goal",
         label: "Course Goal",
         value: "",
         items: [],
-        component: <CourseGoal applyFilter={applyFilter} label="Goal" />,
+        component: (
+          <CourseGoal applyFilter={applyFilter} label="Curricular Goal" />
+        ),
       },
       {
         key: "Competencies",
