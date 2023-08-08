@@ -19,7 +19,6 @@ const CourseCard: FC<{ course: CourseType; isMyCourse?: boolean }> = ({
   course,
   isMyCourse,
 }) => {
-  console.log("mnop:", { course });
   const [open, setOpen] = useState(false);
   const imageUrl = useMemo(
     () => course?.descriptor?.images?.[0]?.url ?? Books,

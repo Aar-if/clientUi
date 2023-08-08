@@ -23,7 +23,7 @@ const Courses = (props: any) => {
 
   const dispatch = useDispatch();
   const courses = useSelector(coursesSelector);
-  console.log("bbb:", { courses });
+  // console.log("bbb:", { courses });
 
   useEffect(() => {
     socket.on("connect", () => {
@@ -36,7 +36,7 @@ const Courses = (props: any) => {
     });
 
     socket.on("response", (payload: any) => {
-      console.log("ccc payload in response: ", payload);
+      // console.log("ccc payload in response: ", payload);
       dispatch(setCourses(payload.message));
       setShowData(true);
       setLoading(false);
@@ -66,7 +66,8 @@ const Courses = (props: any) => {
     setLoading(true);
   }, [filters]);
 
-  console.log("mnop:", { courses });
+  // console.log("mnop:", { courses });
+
   const dataToDisplay = useMemo(() => {
     const dtp: Array<any> = [];
     forEach(courses?.["providers"], (categories: any, index: number) => {
@@ -74,8 +75,16 @@ const Courses = (props: any) => {
         dtp.push(category);
       });
     });
+
+    if (searchText) {
+      return dtp.filter((item) =>
+        item?.descriptor?.name
+          ?.toLowerCase()
+          ?.includes(searchText?.toLowerCase())
+      );
+    }
     return dtp;
-  }, [courses]);
+  }, [courses, searchText]);
 
   const isDataAvailable = useMemo(
     () => showData || dataToDisplay?.length > 0,
