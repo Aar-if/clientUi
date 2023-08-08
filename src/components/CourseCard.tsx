@@ -59,7 +59,9 @@ const CourseCard: FC<{ course: CourseType; isMyCourse?: boolean }> = ({
     >
       <Card
         className="p-2"
-        style={{ background: "linear-gradient(to bottom, #ffff, #EDF0FD)" }}
+        style={{
+          background: "linear-gradient(to bottom, #ffff, #EDF0FD)",
+        }}
       >
         <Row>
           <Col>

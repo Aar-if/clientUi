@@ -99,6 +99,7 @@ const Courses = (props: any) => {
         {searchText && (
           <div
             className={` text-4xl font-medium min-w-[1100px] mx-auto py-4 px-3 my-3 bg-white`}
+
             // className={`${
             //   mode === "dark" ? "text-white" : ""
             // } text-4xl font-medium min-w-[1100px] mx-auto py-4 px-3 my-3 bg-white`}
