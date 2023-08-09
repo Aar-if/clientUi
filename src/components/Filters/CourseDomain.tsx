@@ -27,10 +27,6 @@ const CourseDomain: FC<{ applyFilter: any; label: string }> = ({
         value: "Aesthetic and Cultural Development",
       },
       { label: "Positive Learning Habits", value: "Positive Learning Habits" },
-      // { label: 'Annual Refresher Programme in Teaching (ARPIT)', value: "ARPIT" },
-      // { label: 'Architecture and Planning', value: "ARCHI_COURSES" },
-      // { label: 'Design', value: "Design" },
-      // { label: 'School', value: "SCHOOL" },
     ],
     []
   );
