@@ -1,4 +1,4 @@
-import { useMemo, FC } from "react";
+import { useMemo, FC, useEffect, useState } from "react";
 import { map } from "lodash";
 import NationalCodinator from "./Filters/NationalCodinator";
 import CourseLanguage from "./Filters/CourseLanguage";
@@ -7,8 +7,24 @@ import CourseGoal from "./Filters/CourseGoal";
 import CourseTheme from "./Filters/CourseTheme";
 import CourseDomain from "./Filters/CourseDomain";
 import CourseType from "./Filters/CourseType";
+import getDropdownValues from "../api/getApi";
 
 const CourseFilters: FC<{ applyFilter: any }> = ({ applyFilter }) => {
+  const [domain, setDomain] = useState([]);
+  const [curricular, setCurricular] = useState([]);
+  const [competency, setCompetency] = useState([]);
+
+  useEffect(() => {
+    getValues();
+  }, []);
+
+  const getValues = async () => {
+    const result = await getDropdownValues();
+    setDomain(result?.data?.result?.framework?.categories[0]?.terms);
+    setCurricular(result?.data?.result?.framework?.categories[1]?.terms);
+    setCompetency(result?.data?.result?.framework?.categories[2]?.terms);
+  };
+
   const courseFilters = useMemo(
     () => [
       // {
@@ -66,25 +82,42 @@ const CourseFilters: FC<{ applyFilter: any }> = ({ applyFilter }) => {
         label: "Course Domain",
         value: "",
         items: [],
-        component: <CourseDomain applyFilter={applyFilter} label="Domain" />,
+        component:
+          curricular.length > 0 ? (
+            <CourseDomain
+              applyFilter={applyFilter}
+              label="Domain"
+              domain={domain}
+            />
+          ) : null,
       },
       {
         key: " Goal",
         label: "Course Goal",
         value: "",
         items: [],
-        component: (
-          <CourseGoal applyFilter={applyFilter} label="Curricular Goal" />
-        ),
+        component:
+          curricular.length > 0 ? (
+            <CourseGoal
+              applyFilter={applyFilter}
+              label="Curricular Goal"
+              curricular={curricular}
+            />
+          ) : null,
       },
       {
         key: "Competencies",
         label: "Course Competencies",
         value: "",
         items: [],
-        component: (
-          <CourseCompetencies applyFilter={applyFilter} label="Competencies" />
-        ),
+        component:
+          competency.length > 0 ? (
+            <CourseCompetencies
+              applyFilter={applyFilter}
+              label="Competencies"
+              competency={competency}
+            />
+          ) : null,
       },
       {
         key: "Language",
@@ -110,7 +143,7 @@ const CourseFilters: FC<{ applyFilter: any }> = ({ applyFilter }) => {
         component: <CourseType applyFilter={applyFilter} label="Type" />,
       },
     ],
-    []
+    [curricular, domain, competency]
   );
 
   return (

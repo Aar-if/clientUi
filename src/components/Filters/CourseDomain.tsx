@@ -1,39 +1,53 @@
 import { map } from "lodash";
-import { useCallback, useMemo, useState, FC } from "react";
+import { useCallback, useMemo, useState, FC, useEffect } from "react";
 import { FloatingLabel, Form } from "react-bootstrap";
 import Dropdown from "react-dropdown";
 import "react-dropdown/style.css";
 
-const CourseDomain: FC<{ applyFilter: any; label: string }> = ({
+interface Option {
+  label: string;
+  value: string;
+}
+
+const CourseDomain: FC<{ applyFilter: any; label: string; domain: any }> = ({
   applyFilter,
   label,
+  domain,
 }) => {
   const [status, setStatus] = useState({ label: "All", value: "" });
-  const options = useMemo(
-    () => [
-      { label: "All", value: "" },
-      { label: "Cognitive Development", value: "Cognitive Development" },
-      { label: "Physical Development", value: "Physical Development" },
-      {
-        label: "Socio-Emotional and Ethical Development",
-        value: "Socio-Emotional and Ethical Development",
-      },
-      {
-        label: "Language and Literacy Development",
-        value: "Language and Literacy Development",
-      },
-      {
-        label: "Aesthetic and Cultural Development",
-        value: "Aesthetic and Cultural Development",
-      },
-      { label: "Positive Learning Habits", value: "Positive Learning Habits" },
-      // { label: 'Annual Refresher Programme in Teaching (ARPIT)', value: "ARPIT" },
-      // { label: 'Architecture and Planning', value: "ARCHI_COURSES" },
-      // { label: 'Design', value: "Design" },
-      // { label: 'School', value: "SCHOOL" },
-    ],
-    []
-  );
+  const options = useMemo<Option[]>(() => {
+    const allOption: Option = { label: "All", value: "" };
+    const mappedOptions =
+      domain?.map((option: any) => ({
+        label: option?.name || "",
+        value: option?.name || "",
+      })) || [];
+    return [allOption, ...mappedOptions];
+  }, [domain]);
+  // [
+  //   { label: "All", value: "" },
+  //   { label: "Cognitive Development", value: "Cognitive Development" },
+  //   { label: "Physical Development", value: "Physical Development" },
+  //   {
+  //     label: "Socio-Emotional and Ethical Development",
+  //     value: "Socio-Emotional and Ethical Development",
+  //   },
+  //   {
+  //     label: "Language and Literacy Development",
+  //     value: "Language and Literacy Development",
+  //   },
+  //   {
+  //     label: "Aesthetic and Cultural Development",
+  //     value: "Aesthetic and Cultural Development",
+  //   },
+  //   { label: "Positive Learning Habits", value: "Positive Learning Habits" },
+  //   // { label: 'Annual Refresher Programme in Teaching (ARPIT)', value: "ARPIT" },
+  //   // { label: 'Architecture and Planning', value: "ARCHI_COURSES" },
+  //   // { label: 'Design', value: "Design" },
+  //   // { label: 'School', value: "SCHOOL" },
+  // ],
+  //   []
+  // );
 
   const onChange = useCallback(
     (option: any): void => {
