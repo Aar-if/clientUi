@@ -7,6 +7,7 @@ import Shimmer from "../components/CourseShimmer";
 import { map } from "lodash";
 import CourseCard from "../components/CourseCard";
 import axios from "axios";
+import { CourseType } from "../types/courses";
 const MyCourses: FC<{ mode: string; socket: any }> = ({ mode, socket }) => {
   const [courses, setCourses] = useState([{}]);
   const [isLoading, setIsLoading] = useState(true);
@@ -43,7 +44,7 @@ const MyCourses: FC<{ mode: string; socket: any }> = ({ mode, socket }) => {
               <Shimmer />
             ) : (
               //@ts-ignore
-              map(courses, (course, index) => (
+              map(courses, (course: CourseType, index) => (
                 <CourseCard course={course} key={index} isMyCourse />
               ))
             )}
