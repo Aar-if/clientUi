@@ -13,7 +13,9 @@ const Header: FC<{
       <Navbar
         style={{
           background: "#ffffff",
-
+          position: "fixed",
+          zIndex: "999999",
+          width: "100%",
           boxShadow: "0px 1px 4px rgba(0, 0, 0, 0.1)",
         }}
         expand="lg"

@@ -110,7 +110,11 @@ const Courses = (props: any) => {
         )}
       </Row>
       <div
-        style={{ backgroundColor: "#f7f7f7", minHeight: "90vh" }}
+        style={{
+          background: "linear-gradient(to right, #ffff, #FCF8F5)",
+          minHeight: "90vh",
+          marginTop: "80px",
+        }}
         className="p-3"
       >
         <Row>

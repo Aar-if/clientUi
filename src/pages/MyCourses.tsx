@@ -17,7 +17,7 @@ const MyCourses: FC<{ mode: string; socket: any }> = ({ mode, socket }) => {
     // axios.get('').then(res=>{})
   }, []);
   return (
-    <div style={{}}>
+    <div>
       <Header />
       <Container>
         <Row className="mt-5">

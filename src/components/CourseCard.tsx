@@ -55,7 +55,7 @@ const CourseCard: FC<{ course: CourseType; isMyCourse?: boolean }> = ({
   return (
     <div
       // to={`/courses/${course?.id}`}
-      style={{ cursor: "pointer", marginBottom: "10px" }}
+      style={{ marginBottom: "10px" }}
     >
       <Card
         className="p-2"

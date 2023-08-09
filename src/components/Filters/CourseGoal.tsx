@@ -30,9 +30,27 @@ const CourseGoal: FC<{ applyFilter: any; label: string }> = ({
       },
       {
         label:
+          "CG-5: Children develop a positive attitude towards productive work and service or ‘Seva’",
+        value:
+          "CG-5: Children develop a positive attitude towards productive work and service or ‘Seva’",
+      },
+      {
+        label:
+          "CG-6: Children develop a positive regard for the natural environment around them",
+        value:
+          "CG-6: Children develop a positive regard for the natural environment around them",
+      },
+      {
+        label:
           "CG-7: Children make sense of world around through observation and logical thinking",
         value:
           "CG-7: Children make sense of world around through observation and logical thinking",
+      },
+      {
+        label:
+          "CG-8: Children develop mathematical understanding and abilities to recognize the world through quantities, shapes, and measures",
+        value:
+          "CG-8: Children develop mathematical understanding and abilities to recognize the world through quantities, shapes, and measures",
       },
       {
         label:
@@ -42,9 +60,25 @@ const CourseGoal: FC<{ applyFilter: any; label: string }> = ({
       },
       {
         label:
+          "CG-10: Children develop fluency in reading and writing in Language 1",
+        value:
+          "CG-10: Children develop fluency in reading and writing in Language 1",
+      },
+      {
+        label: "CG-11: Children begin to read and write in Language 2",
+        value: "CG-11: Children begin to read and write in Language 2",
+      },
+      {
+        label:
           "CG-12: Children develop abilities and sensibilities in visual and performing arts, and express their emotions through art in meaningful and joyful ways",
         value:
           "CG-12: Children develop abilities and sensibilities in visual and performing arts, and express their emotions through art in meaningful and joyful ways",
+      },
+      {
+        label:
+          "CG-13: Children develop habits of learning that allow them to engage actively in formal learning environments like a school classroom",
+        value:
+          "CG-13: Children develop habits of learning that allow them to engage actively in formal learning environments like a school classroom",
       },
     ],
     []
