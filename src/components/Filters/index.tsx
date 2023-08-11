@@ -23,7 +23,7 @@ const Filters: FC<{ applyFilter: any; mode: any }> = ({
         onClick={handleFilterToggle}
         // className={`font-medium  rounded-lg cursor-pointer`}
         style={{
-          flexDirection: "column",
+          // flexDirection: "column",
           width: "15%",
         }}
       >
@@ -32,13 +32,13 @@ const Filters: FC<{ applyFilter: any; mode: any }> = ({
           <span
             style={{ marginLeft: "20vh", color: "gray", cursor: "pointer" }}
           >
-            Collapse ↑
+            Collapse
           </span>
         ) : (
           <span
             style={{ marginLeft: "20vh", color: "gray", cursor: "pointer" }}
           >
-            Expand ↓
+            Expand
           </span>
         )}
       </div>
