@@ -55,7 +55,10 @@ const CourseCard: FC<{ course: CourseType; isMyCourse?: boolean }> = ({
   return (
     <div
       // to={`/courses/${course?.id}`}
-      style={{ marginBottom: "10px" }}
+      style={{
+        marginBottom: "10px",
+        marginLeft: "20px",
+      }}
     >
       <Card
         className="p-2"
@@ -87,7 +90,7 @@ const CourseCard: FC<{ course: CourseType; isMyCourse?: boolean }> = ({
                 <Row>
                   <Rating value={4} size={1} />
                 </Row>
-                <hr style={{ width: "100vh" }}></hr>
+                <hr style={{ width: "100%" }}></hr>
               </Col>
             </Row>
             <Row>

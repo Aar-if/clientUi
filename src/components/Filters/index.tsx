@@ -13,12 +13,21 @@ const Filters: FC<{ applyFilter: any; mode: any }> = ({
   };
 
   return (
-    <div className="bg-white" style={{ position: "fixed", width: "50vh" }}>
+    <div
+      className="bg-white"
+      style={{
+        position: "fixed",
+      }}
+    >
       <div
         onClick={handleFilterToggle}
-        className={`font-medium flex items-center mb-3 pt-3 px-2 rounded-lg cursor-pointer`}
+        // className={`font-medium  rounded-lg cursor-pointer`}
+        style={{
+          flexDirection: "column",
+          width: "15%",
+        }}
       >
-        <TbSortDescending style={{ fontSize: "22px" }} /> &nbsp; Filter By
+        <TbSortDescending style={{ fontSize: "22px" }} /> &nbsp; Filter
         {isFilterVisible ? (
           <span
             style={{ marginLeft: "20vh", color: "gray", cursor: "pointer" }}

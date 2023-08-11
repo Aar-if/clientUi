@@ -129,7 +129,12 @@ const Courses = (props: any) => {
                 {!loading && (
                   <div
                     className={`
-                  font-medium mb-3`}
+                  font-medium mb-1`}
+                    style={{
+                      display: "flex",
+                      marginLeft: "80px",
+                      zIndex: "999999",
+                    }}
                   >
                     Showing &nbsp;
                     <span className="font-bold">
