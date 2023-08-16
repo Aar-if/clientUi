@@ -64,6 +64,7 @@ const CourseCard: FC<{ course: CourseType; isMyCourse?: boolean }> = ({
         className="p-2"
         style={{
           background: "linear-gradient(to bottom, #ffff, #EDF0FD)",
+          width: "63vw",
         }}
       >
         <Row>
@@ -74,7 +75,7 @@ const CourseCard: FC<{ course: CourseType; isMyCourse?: boolean }> = ({
               </Col> */}
               <Col xs={7} style={{ padding: "20px" }}>
                 <Row>
-                  <h5 style={{ color: "#0F75BC" }}>
+                  <h5 style={{ color: "#0F75BC", overflowWrap: "normal" }}>
                     {" "}
                     <b>Provider Name : </b>
                     {offeringInstitue}
@@ -90,6 +91,8 @@ const CourseCard: FC<{ course: CourseType; isMyCourse?: boolean }> = ({
                 <Row>
                   <Rating value={4} size={1} />
                 </Row>
+              </Col>
+              <Col xs={20}>
                 <hr style={{ width: "100%" }}></hr>
               </Col>
             </Row>
@@ -115,12 +118,64 @@ const CourseCard: FC<{ course: CourseType; isMyCourse?: boolean }> = ({
               </Col>
             </Row>
             <Row>
-              <Col xs={10} style={{ paddingLeft: "20px" }}>
+              <Col
+                xs={10}
+                style={{
+                  paddingLeft: "20px",
+                }}
+              >
                 {" "}
-                <b>Competency : </b> {course?.descriptor?.competency}
+                <b>Competency : </b> {course?.descriptor?.competency} <br />
+                <br />
               </Col>
             </Row>
-
+            <Col xs={20}>
+              <hr style={{ width: "100%" }}></hr>
+            </Col>
+            <Row
+              xs={3}
+              style={{
+                overflowWrap: "normal",
+              }}
+              // style={{ borderLeft: "1px solid lightgray" }}
+            >
+              <div className="py-1">
+                <FaLanguage />{" "}
+                <span style={{ fontSize: "12px", color: "gray" }}>
+                  {" "}
+                  Language : {course?.descriptor?.language}
+                </span>
+              </div>
+              <div
+                style={{ borderLeft: "1px solid lightgray" }}
+                className="py-2"
+              >
+                <FaDatabase />{" "}
+                <span style={{ fontSize: "12px", color: "gray" }}>
+                  {" "}
+                  Content Type : {course?.descriptor?.contentType}
+                </span>
+              </div>
+              <div
+                style={{ borderLeft: "1px solid lightgray" }}
+                className="py-2"
+              >
+                <FaAffiliatetheme />{" "}
+                <span style={{ fontSize: "12px", color: "gray" }}>
+                  {" "}
+                  Theme : {course?.descriptor?.themes}
+                </span>
+              </div>
+              {/* <div>
+              <FaUser />{" "}
+              <span style={{ fontSize: "12px", color: "gray" }}>
+                {instructors}
+              </span>
+            </div> */}
+            </Row>
+            <Col xs={20}>
+              <hr style={{ width: "100%" }}></hr>
+            </Col>
             {isMyCourse ? (
               <Row className="mt-2">
                 <Col>
@@ -214,49 +269,6 @@ const CourseCard: FC<{ course: CourseType; isMyCourse?: boolean }> = ({
                 />
               </Row>
             )}
-          </Col>
-
-          <Col
-            xs={3}
-            style={{ borderLeft: "1px solid lightgray" }}
-            className="p-2 container-fluid"
-          >
-            <div
-              style={{ borderBottom: "1px solid lightgray" }}
-              className="py-1"
-            >
-              <FaLanguage />{" "}
-              <span style={{ fontSize: "12px", color: "gray" }}>
-                {" "}
-                Language : {course?.descriptor?.language}
-              </span>
-            </div>
-            <div
-              style={{ borderBottom: "1px solid lightgray" }}
-              className="py-2"
-            >
-              <FaDatabase />{" "}
-              <span style={{ fontSize: "12px", color: "gray" }}>
-                {" "}
-                Content Type : {course?.descriptor?.contentType}
-              </span>
-            </div>
-            <div
-              style={{ borderBottom: "1px solid lightgray" }}
-              className="py-2"
-            >
-              <FaAffiliatetheme />{" "}
-              <span style={{ fontSize: "12px", color: "gray" }}>
-                {" "}
-                Theme : {course?.descriptor?.themes}
-              </span>
-            </div>
-            {/* <div>
-              <FaUser />{" "}
-              <span style={{ fontSize: "12px", color: "gray" }}>
-                {instructors}
-              </span>
-            </div> */}
           </Col>
         </Row>
       </Card>

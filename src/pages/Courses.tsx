@@ -11,6 +11,7 @@ import { HiAdjustmentsHorizontal } from "react-icons/hi2";
 import NewHeader from "../components/NewHeader";
 //@ts-ignore
 import CourseShimmer from "../components/CourseShimmer";
+import Footer from "../components/Filters/Footer";
 const Courses = (props: any) => {
   const { socket, mode } = props;
 
@@ -132,7 +133,7 @@ const Courses = (props: any) => {
                   font-medium mb-1`}
                     style={{
                       display: "flex",
-                      marginLeft: "80px",
+                      marginLeft: "70px",
                       zIndex: "999999",
                     }}
                   >
@@ -163,6 +164,9 @@ const Courses = (props: any) => {
             </Col>
           )}
         </Row>
+        <div>
+          <Footer />
+        </div>
       </div>
     </>
   );
