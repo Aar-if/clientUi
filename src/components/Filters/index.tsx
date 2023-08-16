@@ -17,6 +17,7 @@ const Filters: FC<{ applyFilter: any; mode: any }> = ({
       className="bg-white"
       style={{
         position: "fixed",
+        display: "grid",
       }}
     >
       <div
@@ -27,16 +28,16 @@ const Filters: FC<{ applyFilter: any; mode: any }> = ({
           width: "15%",
         }}
       >
-        <TbSortDescending style={{ fontSize: "22px" }} /> &nbsp; Filter
+        <TbSortDescending style={{ fontSize: "22px" }} /> Filter
         {isFilterVisible ? (
           <span
-            style={{ marginLeft: "20vh", color: "gray", cursor: "pointer" }}
+            style={{ marginLeft: "0.5vh", color: "gray", cursor: "pointer" }}
           >
             Collapse
           </span>
         ) : (
           <span
-            style={{ marginLeft: "20vh", color: "gray", cursor: "pointer" }}
+            style={{ marginLeft: "1.2vh", color: "gray", cursor: "pointer" }}
           >
             Expand
           </span>

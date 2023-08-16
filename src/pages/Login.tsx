@@ -196,6 +196,12 @@ const Home = (props: any) => {
                     Browse Anonymously
                   </Button>
                 </div>
+                <div>
+                  Login to 👉{" "}
+                  <a href="https://onest-providerapp.tekdinext.com/">
+                    Provider app
+                  </a>
+                </div>
               </Row>
             </Form>
           </Container>
